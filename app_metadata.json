@@ -1,0 +1,213 @@
+{
+  "appgroup_id": "6964d00be0c73d55994a7f32",
+  "appgroup_name": "Tic Tac Toe",
+  "apps": {
+    "spiele": {
+      "app_id": "6964cfc206171dabddb09843",
+      "name": "Spiele",
+      "controls": {
+        "spieler_x_vorname": {
+          "identifier": "spieler_x_vorname",
+          "label": "Vorname Spieler X",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "spieler_x_nachname": {
+          "identifier": "spieler_x_nachname",
+          "label": "Nachname Spieler X",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "spieler_o_vorname": {
+          "identifier": "spieler_o_vorname",
+          "label": "Vorname Spieler O",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "spieler_o_nachname": {
+          "identifier": "spieler_o_nachname",
+          "label": "Nachname Spieler O",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "startzeit": {
+          "identifier": "startzeit",
+          "label": "Startzeit",
+          "type": "date",
+          "subtype": "datetimeminute",
+          "fulltype": "date/datetimeminute",
+          "description": "A specific moment in time consisting of year, month, day, hour and minute. (Or `null`/`None`)\n\nThe field value will be a string in the format `<YYYY>-<MM>-<DD>T<HH>:<MM>` or `null`.\n\nFor example: `1879-03-14T11:30`."
+        },
+        "spielfeld_status": {
+          "identifier": "spielfeld_status",
+          "label": "Spielfeld Status",
+          "type": "string",
+          "subtype": "textarea",
+          "fulltype": "string/textarea",
+          "description": "A string value that can contain multiple lines of text (or `null`)."
+        }
+      }
+    },
+    "spielzuege": {
+      "app_id": "6964cfdfce3141177669c2e3",
+      "name": "Spielz\u00fcge",
+      "controls": {
+        "spiel": {
+          "identifier": "spiel",
+          "label": "Spiel",
+          "type": "applookup",
+          "subtype": "select",
+          "fulltype": "applookup/select",
+          "description": "A reference to another LivingApp record from a target lookup app (or `null`).\n\nThe field value will be a valid record URL in the form `https://<hostname>/rest/apps/<app-id>/records/<record-id>` or `null`.",
+          "lookup_app": "https://my.living-apps.de/rest/apps/6964cfc206171dabddb09843"
+        },
+        "zugnummer": {
+          "identifier": "zugnummer",
+          "label": "Zugnummer",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`).",
+          "precision": null
+        },
+        "spieler": {
+          "identifier": "spieler",
+          "label": "Spieler",
+          "type": "lookup",
+          "subtype": "radio",
+          "fulltype": "lookup/radio",
+          "description": "One selected option of multiple available options (or `null`).\n\nThe available options are defined in the `lookup_data` attribute of this control's LivingApp.\n\nThe field value will be the key in this `lookup_data` attribute or `null`.",
+          "lookup_data": {
+            "x": "X",
+            "o": "O"
+          }
+        },
+        "position": {
+          "identifier": "position",
+          "label": "Position auf dem Spielfeld",
+          "type": "lookup",
+          "subtype": "select",
+          "fulltype": "lookup/select",
+          "description": "One selected option of multiple available options (or `null`).\n\nThe available options are defined in the `lookup_data` attribute of this control's LivingApp.\n\nThe field value will be the key in this `lookup_data` attribute or `null`.",
+          "lookup_data": {
+            "pos_1": "Position 1 (oben links)",
+            "pos_2": "Position 2 (oben mitte)",
+            "pos_3": "Position 3 (oben rechts)",
+            "pos_4": "Position 4 (mitte links)",
+            "pos_5": "Position 5 (mitte mitte)",
+            "pos_6": "Position 6 (mitte rechts)",
+            "pos_7": "Position 7 (unten links)",
+            "pos_8": "Position 8 (unten mitte)",
+            "pos_9": "Position 9 (unten rechts)"
+          }
+        },
+        "zeitstempel": {
+          "identifier": "zeitstempel",
+          "label": "Zeitstempel",
+          "type": "date",
+          "subtype": "datetimeminute",
+          "fulltype": "date/datetimeminute",
+          "description": "A specific moment in time consisting of year, month, day, hour and minute. (Or `null`/`None`)\n\nThe field value will be a string in the format `<YYYY>-<MM>-<DD>T<HH>:<MM>` or `null`.\n\nFor example: `1879-03-14T11:30`."
+        }
+      }
+    },
+    "spielergebnisse": {
+      "app_id": "6964cfdfb4cd8a71412f8a2d",
+      "name": "Spielergebnisse",
+      "controls": {
+        "spiel": {
+          "identifier": "spiel",
+          "label": "Spiel",
+          "type": "applookup",
+          "subtype": "select",
+          "fulltype": "applookup/select",
+          "description": "A reference to another LivingApp record from a target lookup app (or `null`).\n\nThe field value will be a valid record URL in the form `https://<hostname>/rest/apps/<app-id>/records/<record-id>` or `null`.",
+          "lookup_app": "https://my.living-apps.de/rest/apps/6964cfc206171dabddb09843"
+        },
+        "ergebnis_typ": {
+          "identifier": "ergebnis_typ",
+          "label": "Ergebnis",
+          "type": "lookup",
+          "subtype": "radio",
+          "fulltype": "lookup/radio",
+          "description": "One selected option of multiple available options (or `null`).\n\nThe available options are defined in the `lookup_data` attribute of this control's LivingApp.\n\nThe field value will be the key in this `lookup_data` attribute or `null`.",
+          "lookup_data": {
+            "o_gewinnt": "Spieler O gewinnt",
+            "unentschieden": "Unentschieden",
+            "x_gewinnt": "Spieler X gewinnt"
+          }
+        },
+        "gewinnkombination": {
+          "identifier": "gewinnkombination",
+          "label": "Gewinnkombination",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "abschlusszeit": {
+          "identifier": "abschlusszeit",
+          "label": "Abschlusszeit",
+          "type": "date",
+          "subtype": "datetimeminute",
+          "fulltype": "date/datetimeminute",
+          "description": "A specific moment in time consisting of year, month, day, hour and minute. (Or `null`/`None`)\n\nThe field value will be a string in the format `<YYYY>-<MM>-<DD>T<HH>:<MM>` or `null`.\n\nFor example: `1879-03-14T11:30`."
+        }
+      }
+    },
+    "neues_spiel_starten": {
+      "app_id": "6964cfe025e723424f4f8ddd",
+      "name": "Neues Spiel starten",
+      "controls": {
+        "spieler_x_vorname": {
+          "identifier": "spieler_x_vorname",
+          "label": "Vorname Spieler X",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "spieler_x_nachname": {
+          "identifier": "spieler_x_nachname",
+          "label": "Nachname Spieler X",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "spieler_o_vorname": {
+          "identifier": "spieler_o_vorname",
+          "label": "Vorname Spieler O",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        },
+        "spieler_o_nachname": {
+          "identifier": "spieler_o_nachname",
+          "label": "Nachname Spieler O",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`)."
+        }
+      }
+    }
+  },
+  "metadata": {
+    "apps_list": [
+      "Spiele",
+      "Spielz\u00fcge",
+      "Spielergebnisse",
+      "Neues Spiel starten"
+    ]
+  }
+}
