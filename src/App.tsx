@@ -1,9 +1,8 @@
 import './App.css'
-import Dashboard from '@/pages/Dashboard'
+import TicTacToe from '@/pages/TicTacToe'
 
 function App() {
-
-  return <Dashboard/>
+  return <TicTacToe />
 }
 
 export default App
